@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kool Karen order</title>
+</head>
+<body>
+	<h1>Kool karen eatary</h1>
+	<p>Your convinence is our duty</p>
+
+	<h2>Here are all our items!</h2>
+
+	<!-- Item 1 -->
+	<p>Chips:12RMB</p>
+	<img src= "http://img5.imgtn.bdimg.com/it/u=1776561489,2038658834&fm=27&gp=0.jpg">
+	<br>
+
+	<!-- Item 2 -->
+	<p>Sprite:10MB:</p>
+	<image src="http://img3.imgtn.bdimg.com/it/u=4079202743,2276166332&fm=27&gp=0.jpg">
+	
+    <!-- Item 3 -->
+    <p>hamburger:20MB</p>
+    <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2172583471,1837769722&fm=27&gp=0.jpg">
+
+    <!-- Order Form -->
+    <h2>Place your Order</h2>
+    <form action="{% url 'taobao:home_page' %}" method="POST">
+	{% csrf_token %}
+	<input type="text" name="item" placeholder="Please Type Which Item You Want"><br>
+	<textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+	<input type="submit" value="Place Your Order">
+</form>
+
+    <!-- Show Order -->
+    <h1>your Order:</h1>
+    <p>Item Ordered: {{item}}</p>
+    <p>Delivery Address: {{address}}</p>
+
+</body>
+</html>
